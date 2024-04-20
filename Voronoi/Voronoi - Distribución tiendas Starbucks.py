@@ -8,7 +8,7 @@ import mpld3
 
 
 
-starbucks_data_path = '/Data/directory.csv'
+starbucks_data_path = 'Data/directory.csv'
 starbucks_df = pd.read_csv(starbucks_data_path)
 cleaned_data = starbucks_df.dropna(subset=['Latitude', 'Longitude'])
 us_df = cleaned_data[cleaned_data['Country'] == 'US']
@@ -26,7 +26,7 @@ kmeans.fit(points)
 centroids = kmeans.cluster_centers_
 vor = Voronoi(centroids)
 
-usa_map = gpd.read_file('/Data/cb_2021_us_state_20m/cb_2021_us_state_20m.shp')
+usa_map = gpd.read_file('Data/cb_2021_us_state_20m/cb_2021_us_state_20m.shp')
 usa_map = usa_map.to_crs("EPSG:4326")
 
 fig, ax = plt.subplots(figsize=(15, 15))  
